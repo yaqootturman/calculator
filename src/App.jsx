@@ -8,19 +8,24 @@ const App = ()=> {
 
   return (
     <div >
-      <input value={result} onChange={(e)=>e.preventDefault()}></input>
+      <input value={result} onChange={()=>{}}></input>
     { 
      [1,2,3,4,5,6,7,8,9,0,'+', '-'].map((ele,index)=>{
         return <button key ={index} onClick={(e)=>{
           setStatement([...statement, e.target.innerText])         
         }}>{ele}</button>
-
       })
     }
     <button onClick={()=>{
-        setClicked(!clicked)
+      setClicked(!clicked)
     }}>
       =
+    </button>
+    <button onClick={(e)=>{
+      setResult(0)
+      setStatement([])
+    }}>
+      C
     </button>
     {clicked ? <Result statement={statement} setResult={setResult} setStatement={setStatement}/> :null}
     </div>

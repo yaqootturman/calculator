@@ -14,12 +14,12 @@ const subtraction =(statement)=>{
 
 const Result = (props)=>{
 
-    let {statement,setResult } =props
+    let {statement,setResult} =props
     statement =statement.join('')
     return (
         <>
        {
-        setResult(statement.includes('+')? summation(statement) :statement.includes('-') ? subtraction(statement): null)   
+        setResult(statement.includes('+')? summation(statement) :statement.includes('-') ? subtraction(statement): null)
        }
         </>
     )
